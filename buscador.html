@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Buscador </title>
+</head>
+<body>
+    <h1> Buscador Avanzado</h1>
+   <form id="busqueda">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="Título">
+
+        <label for="autor"> Autor:</label>
+        <input type="text" id="autor" name="Autor">
+
+        <label for="isbn"> ISBN:</label>
+        <input type="text" id="isbn" name="ISBN">
+
+       
+        <label for="categoria"> Categoría:</label>
+        <select id="categoria" name="categoria">
+             <option value=""> Todas </option>
+            <option value="Fantasía"> Fantasía </option>
+            <option value="Informática"> Informática </option>
+            <option value="Historia"> Historia </option>
+            <option value="Novela"> Novela</option>
+        </select>
+        
+        <button id="buscar" type="submit"> Buscar </button>
+
+        <h2> Resultados </h2>
+        <table id="resultados">
+             <thead>
+            <tr>
+                <th> Título </th>
+                <th> Autor </th>
+                <th> ISBN </th>
+                <th> Categoría</th>
+            </tr>  
+        </thead>
+        <tbody> </tbody>
+        </table>
+   </form> 
+
+    <div id="detalleLibro"></div>
+   <script src="js/buscador.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Reseñas</title>
+</head>
+<body>
+    <h1> Reseñas de un Libro </h1>
+
+    <p id="puntuacion-media"></p>
+    <div id="lista-resenas"></div>
+    
+     <form id="formulario-resenas">
+        <label for="nuevo-usuario"> Usuario: </label>
+        <input type="text" id="nuevo-usuario" required>
+
+        <label for="nueva-puntuacion"> Puntuación: </label>
+        <input type="number" id="nueva-puntuacion" min="1" max="10" required>
+
+        <label for="nuevo-comentario"> Comentario: </label>
+        <textarea id="nuevo-comentario" required></textarea>
+
+        <label for="nuevo-idLibro"> ID del Libro: </label>
+        <input type="text" id="nuevo-idLibro" required>
+       
+        <button type="submit">Enviar Reseña</button>
+    </form>
+    <script src="reseñas.js"></script>
+</body>
+</html>

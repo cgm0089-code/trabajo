@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes Estadísticos</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Informes y estadísticas de la biblioteca</h1>
+            <p>Estadísticas calculadas a partir de los XML de libros, préstamos y reseñas.</p>
+        </header>
+
+        <section class="panel" id="consultas-xquery">
+            <h2>Consultas XQuery</h2>
+            <p>Las siguientes consultas XQuery muestran cómo se podrían calcular las estadísticas directamente desde los XML.</p>
+        </section>
+
+        <section class="panel">
+            <h2>Libros más prestados</h2>
+            <div id="libros-mas-prestados" class="estadisticas-grid"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Libros mejor valorados</h2>
+            <div id="libros-mejor-valorados" class="estadisticas-grid"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Libros por categoría</h2>
+            <div id="libros-por-categoria" class="estadisticas-grid"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Usuarios con más libros leídos</h2>
+            <div id="usuarios-mas-leidos" class="estadisticas-grid"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Representación gráfica</h2>
+            <div id="grafico-categorias"></div>
+            <div id="grafico-prestamos"></div>
+        </section>
+
+        <div id="mensaje-error"></div>
+    </div>
+    <script src="informes.js" defer></script>
+</body>
+</html>

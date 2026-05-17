@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Libros</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .catalogo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .catalogo-container h1 {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: #4a1f6f;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, serif;
+            font-style: italic;
+        }
+
+        .filtros-section {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .filtros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .filtro-grupo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filtro-grupo label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
+        .filtro-grupo input,
+        .filtro-grupo select {
+            padding: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+        }
+
+        .botones-filtros {
+            display: flex;
+            gap: 8px;
+        }
+
+        .botones-filtros button {
+            padding: 8px 15px;
+            background-color: #7a3db8;
+            color: white;
+            border: 1px solid #5e2e8f;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .botones-filtros button:hover {
+            background-color: #6a2d98;
+        }
+
+        .botones-filtros button.secondary {
+            background-color: #eee;
+            color: #333;
+            border: 1px solid #999;
+        }
+
+        .botones-filtros button.secondary:hover {
+            background-color: #ddd;
+        }
+
+        .libros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .libro-card {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .libro-card:hover {
+            border-color: #7a3db8;
+            background-color: #fafafa;
+        }
+
+        .libro-header {
+            background-color: #7a3db8;
+            padding: 10px;
+            color: white;
+            margin: -12px -12px 10px -12px;
+        }
+
+        .libro-header h3 {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .libro-body {
+            padding: 0;
+        }
+
+        .libro-info {
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .libro-info strong {
+            color: #333;
+            display: block;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .libro-categoria {
+            display: inline-block;
+            background-color: #eee;
+            color: #666;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .libro-acciones {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .libro-acciones button {
+            flex: 1;
+            padding: 6px;
+            font-size: 11px;
+            border: 1px solid #999;
+            cursor: pointer;
+            background-color: #f5f5f5;
+        }
+
+        .btn-detalles {
+            background-color: #7a3db8;
+            color: white;
+            border: 1px solid #5e2e8f;
+        }
+
+        .btn-detalles:hover {
+            background-color: #6a2d98;
+        }
+
+        .btn-eliminar {
+            background-color: #dc3545;
+            color: white;
+            border: 1px solid #bb2d3b;
+        }
+
+        .btn-eliminar:hover {
+            background-color: #c82333;
+        }
+
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .paginacion button,
+        .paginacion span {
+            padding: 6px 10px;
+            border: 1px solid #999;
+            background-color: white;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+            font-size: 12px;
+        }
+
+        .paginacion button:hover {
+            background-color: #eee;
+        }
+
+        .paginacion span {
+            background-color: #7a3db8;
+            color: white;
+            cursor: default;
+        }
+
+        .paginacion button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Modal para detalles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #ddd;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .cerrar-modal {
+            font-size: 24px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+        }
+
+        .cerrar-modal:hover {
+            color: #333;
+        }
+
+        .detalles-libro {
+            display: grid;
+            gap: 10px;
+        }
+
+        .detalle-fila {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 10px;
+        }
+
+        .detalle-fila strong {
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Formulario para añadir libro */
+        .agregar-libro-section {
+            background-color: #f3e8ff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .agregar-libro-section h2 {
+            color: #4a1f6f;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .formulario-agregar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .formulario-agregar input,
+        .formulario-agregar select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+        }
+
+        .formulario-agregar button {
+            background-color: #7a3db8;
+            color: white;
+            padding: 8px 15px;
+            border: 1px solid #5e2e8f;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .formulario-agregar button:hover {
+            background-color: #6a2d98;
+        }
+
+        .sin-resultados {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .mensaje {
+            padding: 12px;
+            margin-bottom: 15px;
+            display: none;
+            border: 1px solid;
+            font-size: 13px;
+        }
+
+        .mensaje.success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+            display: block;
+        }
+
+        .mensaje.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="catalogo-container">
+        <h1>Catálogo de Libros</h1>
+
+        <div id="mensaje" class="mensaje"></div>
+
+        <!-- Sección para añadir nuevo libro -->
+        <div class="agregar-libro-section">
+            <h2>Añadir Nuevo Libro</h2>
+            <form class="formulario-agregar" id="formulario-agregar">
+                <input type="text" id="nuevo-titulo" placeholder="Título" required>
+                <input type="text" id="nuevo-autor" placeholder="Autor" required>
+                <input type="text" id="nuevo-isbn" placeholder="ISBN" required>
+                <select id="nueva-categoria" required>
+                    <option value="">Seleccionar categoría</option>
+                    <option value="Fantasía">Fantasía</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Informática">Informática</option>
+                    <option value="Novela">Novela</option>
+                </select>
+                <button type="submit">Añadir Libro</button>
+            </form>
+        </div>
+
+        <!-- Sección de filtros -->
+        <div class="filtros-section">
+            <h2 style="margin-top: 0; margin-bottom: 10px; color: #333; font-size: 15px;">Filtros</h2>
+            <div class="filtros-grid">
+                <div class="filtro-grupo">
+                    <label for="filtro-categoria">Categoría:</label>
+                    <select id="filtro-categoria">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+                <div class="filtro-grupo">
+                    <label for="filtro-autor">Autor:</label>
+                    <input type="text" id="filtro-autor" placeholder="Buscar por autor...">
+                </div>
+                <div class="filtro-grupo">
+                    <label for="filtro-titulo">Título:</label>
+                    <input type="text" id="filtro-titulo" placeholder="Buscar por título...">
+                </div>
+                <div class="filtro-grupo">
+                    <label for="filtro-isbn">ISBN:</label>
+                    <input type="text" id="filtro-isbn" placeholder="Buscar por ISBN...">
+                </div>
+            </div>
+            <div class="botones-filtros">
+                <button id="btn-aplicar-filtros">Aplicar Filtros</button>
+                <button id="btn-limpiar-filtros" class="secondary">Limpiar Filtros</button>
+            </div>
+        </div>
+
+        <!-- Listado de libros -->
+        <div id="libros-grid" class="libros-grid"></div>
+
+        <!-- Paginación -->
+        <div class="paginacion" id="paginacion"></div>
+    </div>
+
+    <!-- Modal para detalles del libro -->
+    <div id="modal-detalles" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="detalles-titulo">Detalles del Libro</h2>
+                <button class="cerrar-modal" id="cerrar-modal">&times;</button>
+            </div>
+            <div id="detalles-contenido" class="detalles-libro"></div>
+        </div>
+    </div>
+
+    <script src="catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<titlle>Tu Espacion de Lectura</titlle>
+		<link>http://127.0.0.1:5500/index.html</link>
+		<descripcion>Últimas novedades añadidas a la biblioteca</descripcion>
+		<language>es</language>
+		<lastBuildDate>Mierc, 07 Marzo 2025 10:01:01 GMT</lastBuildDate>
+	
+		<item>
+			<title>El Libro de la Noche</title>
+			<link>http://tuespaciodelectura.com/catalogo.html</link>
+			<description>Nueva incorporacion a la biblioteca. Autora: Paula Márquez. Categoría: Fantasía.</description>
+			<pubDate>Lun,23 Mar 2002 10:09:00</pubDate>
+			<guid>http://tuespaciodelectura.com/libros/1</guid>
+		</item>
+		
+		<item>
+			<title>Informática Paso a Paso</title>
+			<link>http://tuespaciodelectura.com/catalogo.html</link>
+			<description>Nueva incorporacion a la biblioteca. Autora: Naira Gamboa. Categoría:Informática.</description>
+			<pubDate>Sab,3 Mar 2010 14:30:00</pubDate>
+			<guid>http://tuespaciodelectura.com/libros/2</guid>
+		</item>
+		
+		<item>
+			<title>Paradox</title>
+			<link>http://tuespaciodelectura.com/catalogo.html</link>
+			<description>Nueva incorporacion a la biblioteca. Autora:Margarita Pérez. Categoría: Novela.</description>
+			<pubDate>Dom,4 Jun 2015 20:30:20</pubDate>
+			<guid>http://tuespaciodelectura.com/libros/3</guid>
+		</item>
+		
+		<item>
+			<title>Nuestro Caballero</title>
+			<link>http://tuespaciodelectura.com/catalogo.html</link>
+			<description>Nueva incorporacion a la biblioteca. Autor: Ricardo Soto. Categoría: Historia.</description>
+			<pubDate>Mar,25 Jul 2023 18:40:40</pubDate>
+			<guid>http://tuespaciodelectura.com/libros/4</guid>
+		</item>
+	</channel>
+</rss>

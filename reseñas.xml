@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resenas>
+	<resena idLibro="1">
+		<usuario>Carmen</usuario>
+		<puntuacion>9</puntuacion>
+		<comentario>Buen libro</comentario>
+		<fecha>09-06-2023</fecha>
+	</resena>
+	
+	<resena idLibro="2">
+		<usuario>Adrián</usuario>
+		<puntuacion>7</puntuacion>
+		<comentario>Excelente libro</comentario>
+		<fecha>25-05-2021</fecha>
+	</resena>
+</resenas>

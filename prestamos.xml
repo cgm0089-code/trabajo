@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prestamos>
+	<prestamo id="1">
+		<usuario>Manuel</usuario>
+		<libro>1</libro>
+		<fechaprestamo>10-05-2023</fechaprestamo>
+		<fechadevolucion>09-06-2023</fechadevolucion>
+		<estado>devuelto</estado>
+	</prestamo>
+	
+	<prestamo id="2">
+		<usuario>Lola</usuario>
+		<libro>2</libro>
+		<fechaprestamo>05-07-2020</fechaprestamo>
+		<fechadevolucion>10-08-2020</fechadevolucion>
+		<estado>devuelto</estado>
+	</prestamo>
+	
+	<prestamo id="3">
+		<usuario>Juan</usuario>
+		<libro>3</libro>
+		<fechaprestamo>25-05-2024</fechaprestamo>
+		<fechadevolucion>30-06-2024</fechadevolucion>
+		<estado>devuelto</estado>
+	</prestamo>
+	
+	<prestamo id="4">
+		<usuario>Marta</usuario>
+		<libro>1</libro>
+		<fechaprestamo>15-10-2023</fechaprestamo>
+		<fechadevolucion>30-12-2023</fechadevolucion>
+		<estado>devuelto</estado>
+	</prestamo>
+	
+	<prestamo id="5">
+		<usuario>Jose</usuario>
+		<libro>3</libro>
+		<fechaprestamo>06-06-2024</fechaprestamo>
+		<fechadevolucion>10-08-2024</fechadevolucion>
+		<estado>devuelto</estado>
+	</prestamo>
+</prestamos>

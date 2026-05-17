@@ -1,0 +1,472 @@
+body{
+    background-color: #f3e8ff;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap:25px; /* Este valor controla la separación entre los enlaces*/
+    padding: 0;
+    margin-top: 20px;
+} 
+
+nav ul li a{
+    text-decoration: none;
+    color:#7a3db8;
+    color: #1f3c88;
+    font-weight:bold;
+    font-size:18px;
+}
+
+nav ul li a:hover{
+    color:#7a3db8;
+}
+.logo{
+    text-align: center;
+    margin-top: 20px;
+}
+.logo img{
+    width: 150px;
+}
+    
+ h1{
+    text-align:center;
+    margin-top: 40px;
+    color:#4a1f6f;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+h2{
+    text-align: center;
+    margin-top: 30px;
+    color:#b57be6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    font-style: italic;
+}
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color:#4a1f6f;
+}
+.titulo-libro, .autor-libro, .destacado-descripcion{
+    font-family:'Times New Roman',Times, serif;
+    font-weight: bold;
+    color: #b57be6;
+}
+
+.contenedor-libros{
+    display: flex;
+    gap:20px;/*Este valor controla la separación entre las imágenes de los libros*/
+    justify-content: center;/*Este valor centra las imágenes*/
+    margin-top: 20px;
+}
+.libro1 img{
+    width: 200px;
+}
+
+.libro2 img{
+    width: 200px;
+}
+.libro3 img{
+    width: 200px;
+}
+.libro4 img{
+    width: 200px;
+}
+
+footer{
+    background-color:#4a1f6f;
+    color: white;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-contenedor{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap:30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+footer h3{
+    color: #b57be6;
+    margin-bottom: 15px;
+}
+
+footer p{
+    margin:6px 0;
+    font-size: 14px;
+}
+
+footer ul{
+    list-style: none;
+    padding:0;
+}
+
+footer ul li{
+    margin-bottom: 8px;
+}
+
+footer ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer ul li a:hover{
+    color: #b57be6;
+}
+
+.footer-copy{
+    text-align: center;
+    margin-top:30px;
+    font-size:13px;
+    color:#c9a0e8;
+    border-top: 1px solid #7a3db8;
+    padding-top: 15px;
+}
+#busqueda{
+    width: 60%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f4fb;
+    border-radius: 10px;
+}
+
+
+#busqueda input,
+#busqueda select{
+    width: 100%;
+    padding: 10px;
+    padding-right: 1px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+}
+
+#busqueda button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #7a3db8;
+    color: white;
+    border: white;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#busqueda button:hover{
+    background-color: #4a1f6f;
+}
+
+#tabla-resultados{
+ width: 80%;
+ margin: 30px auto;
+ border-collapse: collapse;
+ background-color: white;
+ border-radius: 10px;
+ 
+}
+
+#tabla-resultados th{
+    background-color: #7a3db8;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+#tabla-resultados td{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#tabla-resultados tr:hover{
+    background-color: #f3eaff;
+}
+
+form{
+    background: #f3e8ff;
+    width: 60%;
+    padding: 25px 50px;
+    max-width: 500px;
+    margin: 40px auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form label{
+    display: block;
+    margin-top:10px;
+    font-weight: bold;
+    color:#4a148c;
+}
+
+input, textarea,select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    border: 1px solid #b39ddb;
+    font-size: 15px;
+}
+
+button{
+    background-color: #7e57c2;;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+button:hover{
+    background-color: #5e35b1;;
+}
+
+ #tabla-resultados{
+    background:white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#resultados tbody tr{
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    background-color:#7e57c2;
+    color: white;
+    padding: 10px;
+}
+
+td{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+#lista-resenas ul{
+    list-style: none;
+    padding: 0;
+    width: 60%;
+    margin: 20px auto;
+
+}
+
+#lista-resenas li{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10 px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #7e57c2;
+}
+
+#lista-resenas strong{
+    color: #4a1f6f;
+}
+
+#puntuacion-media{
+    text-aling:center;
+    font-size:18px;
+    font-weight: bold;
+    color: #7a3db8;
+    margin: top 20px;
+}
+
+.consulta-panel pre{
+    white-space: pre-wrap;
+    background-color: #f5f1ff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    overflow: auto;
+    color: #7e57c2;
+}
+
+/* Estilos para la página de informes */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header p {
+    color: #7a3db8;
+    font-size: 16px;
+    margin-top: 10px;
+    font-style: italic;
+    font-family: Georgia, serif;
+    font-weight: 500;
+}
+
+.panel {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #b57be6;
+    border-bottom: 2px solid #e8d5f2;
+    padding-bottom: 10px;
+}
+
+.estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.resultado-item {
+    background: linear-gradient(135deg, #f5f1ff 0%, #faf8ff 100%);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #7a3db8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.resultado-item:hover {
+    box-shadow: 0 4px 12px rgba(122, 61, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+.resultado-item strong {
+    color: #4a1f6f;
+    font-weight: 600;
+}
+
+.resultado-item span {
+    background-color: #7a3db8;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Estilos para gráficos de barras */
+#grafico-categorias,
+#grafico-prestamos {
+    margin-top: 20px;
+}
+
+#grafico-categorias h3,
+#grafico-prestamos h3 {
+    color: #4a1f6f;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.barra-fila {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.barra-etiqueta {
+    min-width: 150px;
+    font-weight: 600;
+    color: #4a1f6f;
+    text-align: right;
+    font-size: 14px;
+}
+
+.barra-base {
+    flex: 1;
+    height: 30px;
+    background-color: #f0e8ff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.barra-indicador {
+    height: 100%;
+    background: linear-gradient(90deg, #b57be6 0%, #7a3db8 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    font-weight: bold;
+    padding-right: 10px;
+    font-size: 13px;
+    transition: width 0.3s ease;
+}
+
+.consulta-panel {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #b57be6;
+}
+
+.consulta-panel h3 {
+    color: #4a1f6f;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#mensaje-error {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid #ffc107;
+    display: none;
+}
+
+#mensaje-error:not(:empty) {
+    display: block;
+}
+
+.titulo-libro{
+    font-weight: bold;
+    color:#4a1f6f;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.auto-libro{
+    text-aling:center;
+}
+
+.destacado-descripcion{
+    text-align: center;
+}
+.libro1,.libro3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

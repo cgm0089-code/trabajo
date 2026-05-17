@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios>
+	<usuario id="1">
+		<nombre>Carmen</nombre>
+	</usuario>
+	
+	<usuario id="2">
+		<nombre>Adrián</nombre>
+	</usuario>
+</usuarios>

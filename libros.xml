@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+	<libro>
+		<titulo>El Libro de la Noche</titulo>
+		<autor>Paula Márquez</autor>
+		<isbn>567156</isbn>
+		<categoria>Fantasía</categoria>
+	</libro>
+	
+	<libro> 
+		<titulo>Informática Paso a Paso</titulo>
+		<autor>Naira Gamboa</autor>
+		<isbn>023577</isbn>
+		<categoria>Informática</categoria>
+	</libro>
+	
+	<libro> 
+		<titulo>Paradox</titulo>
+		<autor>Margarita Perez</autor>
+		<isbn>889745</isbn>
+		<categoria>Novela</categoria>
+	</libro>
+	
+	<libro>
+		<titulo>Nuestro Caballero</titulo>
+		<autor>Ricardo Soto</autor>
+		<isbn>568900</isbn>
+		<categoria>Historia</categoria>
+	</libro>
+</libros>
